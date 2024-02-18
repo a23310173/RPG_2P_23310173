@@ -27,6 +27,9 @@ public:
     int getDefense();
     int getSpeed();
     string toString();
+
+    //Funcion para modificar la vida a 0 al perdedor de un combate (para que no quede negativo)
+    virtual void setHealth(Character *target, int newHealth){ target->health = 0;};
 };
 
 
