@@ -29,8 +29,7 @@ public:
     string toString();
 
     //Funcion para modificar la vida a 0 al perdedor de un combate (para que no quede negativo)
-    virtual void setHealth(Character *target, int newHealth){ target->health = 0;};
-};
+    virtual void setHealth(Character *target, int newHealth){target->health = 0;};};
 
 
 #endif //RPG_CHARACTER_H

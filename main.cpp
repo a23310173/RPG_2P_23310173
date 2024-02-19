@@ -18,9 +18,11 @@ int main() {
         // En esta parte se hace un if function para setear la vida a 0 del perdedor y que no queden negativo
         if (player->getHealth() < 0){
             player->setHealth(player, 0);
+            cout << "Pelea terminada. El ganador es" << player->getName() << "." << endl;
         }
         else if (enemy->getHealth() < 0){
             enemy->setHealth(enemy, 0);
+            cout << "Pelea terminada. El ganador es " << enemy->getName() << "." << endl;
         }
         else {NULL;}
 
