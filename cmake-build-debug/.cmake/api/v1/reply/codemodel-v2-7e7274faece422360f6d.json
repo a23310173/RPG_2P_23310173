@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.27"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "rpg::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-rpg-Debug-5a38237b72076ffd0e0e.json",
+					"jsonFile" : "target-rpg-Debug-9686e35ba481a88efaad.json",
 					"name" : "rpg",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/Almacenamiento/C++/P.O.O/Practica_3_Juego/RPG_2P_23310173/cmake-build-debug",
-		"source" : "E:/Almacenamiento/C++/P.O.O/Practica_3_Juego/RPG_2P_23310173"
+		"build" : "/Volumes/ELITE SE880/Almacenamiento/C++/P.O.O/Practica_3_Juego/RPG_2P_23310173/cmake-build-debug",
+		"source" : "/Volumes/ELITE SE880/Almacenamiento/C++/P.O.O/Practica_3_Juego/RPG_2P_23310173"
 	},
 	"version" : 
 	{
