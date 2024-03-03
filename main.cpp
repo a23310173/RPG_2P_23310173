@@ -2,6 +2,9 @@
 #include "Player/Player.h"
 #include "Enemy/Enemy.h"
 #include "Combat/Combat.h"
+#include "Character/Character.h"
+#include "Combat/Action.h"
+
 
 
 int main() {

@@ -177,4 +177,6 @@ CMakeFiles/rpg.dir/main.cpp.obj: \
  D:/Program\ Files\ (x86)/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
  D:/Program\ Files\ (x86)/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
  D:/Program\ Files\ (x86)/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
- D:/Program\ Files\ (x86)/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h
+ D:/Program\ Files\ (x86)/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
+ E:\Almacenamiento\C++\P.O.O\Practica_3_Juego\2P-RPG\Character/Character.h \
+ E:\Almacenamiento\C++\P.O.O\Practica_3_Juego\2P-RPG\Combat/Action.h
