@@ -77,7 +77,7 @@ void Combat::doCombat() {
     int round = 1;
     //Este while representa las rondas del combate
     while(enemies.size() > 0 && partyMembers.size() > 0) {
-        cout<<"Round " << round << endl;
+        cout<<"Round: " << round << endl;
         vector<Character*>::iterator it = participants.begin();
         registerActions(it);
         executeActions(it);
