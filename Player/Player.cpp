@@ -25,6 +25,8 @@ void Player::takeDamage(int damage) {
 
     if(health <= 0) {
         cout << name << " has been defeated!" << endl;
+        // Si la vida del jugador es menor a 0 usar la funcion setHealth para que la vida sea 0
+        setHealth(this, 0);
     }
 }
 

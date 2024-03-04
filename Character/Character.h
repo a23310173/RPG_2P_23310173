@@ -21,10 +21,14 @@ public:
 
     virtual void doAttack(Character *target) = 0;
     virtual void takeDamage(int damage) = 0;
+    //Funcion para volver la vida a 0 del objetivo
+    virtual void setHealth(Character *target, int newHealth){ target->health = 0;};
 
     //TODO: Implementar metodo de defensa
-    //Incrementar la defensa un 20% solo por el turno actual
-    void defend();
+    //Funcion para incrementar la defensa un 20% solo por el turno actual
+    virtual void defend(Character *target){target->defense = target->defense * 1.2;};
+    //Funcion para desactivar la defensa
+    virtual void stopDefend(Character *target){target->defense = target->defense / 1.2;};
 
     bool flee(Character* target);
     string getName();
