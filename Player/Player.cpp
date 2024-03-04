@@ -56,9 +56,8 @@ Character* Player::selectTarget(vector<Enemy*> possibleTargets) {
 
 Action Player::takeAction(vector<Enemy*> enemies) {
     int action = 0;
-    cout << "Select an action: " << endl
-    << "1. Attack" << endl;
-
+    cout << "Select an action: " << endl << "1. Attack" << endl;
+    cout << "2. Defend" << endl;
     //TODO: Validate input
     cin >> action;
     Action currentAction;
@@ -70,6 +69,16 @@ Action Player::takeAction(vector<Enemy*> enemies) {
             currentAction.target = target;
             currentAction.action = [this, target](){
                 doAttack(target);
+            };
+            currentAction.speed = getSpeed();
+            break;
+        case 2:
+            currentAction.target = this;
+            currentAction.action = [this](){
+                defend(this);
+                cout << name << " is defending!" << endl;
+                // Mostrar la defensa actualizada
+                cout << "Defense: " << defense << endl;
             };
             currentAction.speed = getSpeed();
             break;
