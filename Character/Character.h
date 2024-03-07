@@ -5,6 +5,7 @@
 #ifndef RPG_CHARACTER_H
 #define RPG_CHARACTER_H
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -26,9 +27,9 @@ public:
 
     //TODO: Implementar metodo de defensa
     //Funcion para incrementar la defensa un 20% solo por el turno actual
-    virtual void defend(Character *target){target->defense = target->defense * 1.2;};
+    virtual void defend(Character *target){target->defense = ceil(target->defense * 1.2);};
     //Funcion para desactivar la defensa
-    virtual void stopDefend(Character *target){target->defense = target->defense / 1.2;};
+    virtual void stopDefend(Character *target){target->defense = floor(target->defense / 1.2);};
 
     bool flee(Character* target);
     string getName();

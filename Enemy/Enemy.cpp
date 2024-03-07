@@ -26,18 +26,21 @@ void Enemy::takeDamage(int damage) {
         int trueDamage = damage - defense;
         contador_defensa++;
         cout << name << " took " << trueDamage << " damage!" << endl;
+        cout << "Remaining health: " << health << endl;
     }
     //Si la vida del enemigo no es mayor al 15% de su vida total, no incrementar la defensa
     else{
         int trueDamage = damage - defense;
         health-= trueDamage;;
         cout << name << " took " << trueDamage << " damage!" << endl;
+        cout << "Remaining health: " << health << endl;
     }
 
     if(health <= 0) {
         // Si la vida del enemigo es menor a 0 usar la funcion setHealth para que la vida sea 0
         setHealth(this, 0);
         cout << name << " has been defeated!" << endl;
+        cout << "Life: 0" << endl;
     }
 }
 

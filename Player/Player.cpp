@@ -55,6 +55,7 @@ Character* Player::selectTarget(vector<Enemy*> possibleTargets) {
 }
 
 Action Player::takeAction(vector<Enemy*> enemies) {
+    //TODO: IMPLEMENTAR STOP DEFENDING Y QUITAR DE LA PRIORITY QUEUE
     int action = 0;
     cout << "Select an action: " << endl << "1. Attack" << endl;
     cout << "2. Defend" << endl;
@@ -80,7 +81,7 @@ Action Player::takeAction(vector<Enemy*> enemies) {
                 // Mostrar la defensa actualizada
                 cout << "Defense: " << defense << endl;
             };
-            currentAction.speed = getSpeed();
+            currentAction.speed = getSpeed()*(100);
             break;
         default:
             cout << "Invalid action" << endl;
