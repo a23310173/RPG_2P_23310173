@@ -28,9 +28,10 @@ public:
     //TODO: Implementar metodo de defensa
     //Funcion para incrementar la defensa un 20% solo por el turno actual
     virtual void defend(Character *target){target->defense = ceil(target->defense * 1.2);};
-    //Funcion para desactivar la defensa
-    virtual void stopDefend(Character *target){target->defense = floor(target->defense / 1.2);};
-
+    //Funcion para desactivar la defensa (volver la defensa a su valor original)
+    virtual void stopDefend(Character *target){target->defense = floor(target->defense / 1.3);};
+    //Funcion para saltar un turno y no hacer nada
+    virtual void skipTurn(Character *target){};
     bool flee(Character* target);
     string getName();
     int getHealth();

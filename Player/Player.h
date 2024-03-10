@@ -25,7 +25,7 @@ public:
     void takeDamage(int damage) override;
     Character* selectTarget(vector<Enemy*> possibleTargets);
     Action takeAction(vector<Enemy*> enemies);
-
+    int defensas = 0;
     void gainExperience(int exp);
 
     //TODO: Implement use object

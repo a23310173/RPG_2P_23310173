@@ -18,8 +18,12 @@ void Player::doAttack(Character *target) {
 
 void Player::takeDamage(int damage) {
     int trueDamage = damage - defense;
-
-    health-= trueDamage;
+    // Si la defensa es mayor al daño recibido, no se resta vida
+    if (trueDamage < 0) {
+        trueDamage = 0;
+    } else {
+        health -= trueDamage;
+    }
 
     cout << name << " took " << trueDamage << " damage!" << endl;
 
@@ -55,38 +59,72 @@ Character* Player::selectTarget(vector<Enemy*> possibleTargets) {
 }
 
 Action Player::takeAction(vector<Enemy*> enemies) {
-    //TODO: IMPLEMENTAR STOP DEFENDING Y QUITAR DE LA PRIORITY QUEUE
+
     int action = 0;
-    cout << "Select an action: " << endl << "1. Attack" << endl;
-    cout << "2. Defend" << endl;
-    //TODO: Validate input
-    cin >> action;
-    Action currentAction;
-    Character* target = nullptr;
+    //Implementacion de un interruptor para validar la entrada del usuario
+    bool interruptor = true;
+    do {
+        cout << "Select an action: " << endl << "1. Attack" << endl;
+        cout << "2. Defend" << endl;
+        cin >> action;
+        if(action == 1 || action == 2){
+            interruptor = false;
+        }
+        else {
+            cout << "Invalid action" << endl;
+        }
+    }while (interruptor);
+        Action currentAction;
+        Character* target = nullptr;
 
     switch(action) {
         case 1:
+            if (defensas == 1) {
+                stopDefend(this);
+                cout << name << " Stop defending and now will attack." << endl;
+                defensas = 0;
+            }
             target = selectTarget(enemies);
             currentAction.target = target;
-            currentAction.action = [this, target](){
+            currentAction.action = [this, target]() {
                 doAttack(target);
             };
             currentAction.speed = getSpeed();
             break;
         case 2:
             currentAction.target = this;
-            currentAction.action = [this](){
-                defend(this);
+            if (this->defensas == 0) {
+                this->defend(this);
                 cout << name << " is defending!" << endl;
                 // Mostrar la defensa actualizada
                 cout << "Defense: " << defense << endl;
-            };
-            currentAction.speed = getSpeed()*(100);
-            break;
-        default:
-            cout << "Invalid action" << endl;
-            break;
+                this->defensas++;
+                currentAction.speed = getSpeed() * (100);
+                currentAction.action = [this]() {
+                    this->defend(this);
+                };
+            } else if (this->defensas == 1) {
+                this->stopDefend(this);
+                cout << name << " cant defend twice!" << endl;
+                cout << "Defense: " << defense << endl;
+                this->defensas = 2;
+                currentAction.speed = getSpeed() * (100);
+                currentAction.action = [this]() {
+                    this->stopDefend(this);
+                };
+            } else {
+                cout << "Cant defend twice. You lose a movement" << endl;
+                this->skipTurn(this);
+                //Take a movement from the player
+                currentAction.speed = getSpeed() * (100);
+                currentAction.action = [this]() {
+                    this->skipTurn(this);
+                };
+                break;
+                default:
+                    cout << "Invalid action" << endl;
+                break;
+            }
     }
-
     return currentAction;
 }
