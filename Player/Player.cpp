@@ -32,6 +32,7 @@ void Player::takeDamage(int damage) {
         // Si la vida del jugador es menor a 0 usar la funcion setHealth para que la vida sea 0
         setHealth(this, 0);
     }
+    cout << "Health remaning: " << health << endl;
 }
 
 void Player::levelUp() {
@@ -64,6 +65,7 @@ Action Player::takeAction(vector<Enemy*> enemies) {
     //Implementacion de un interruptor para validar la entrada del usuario
     bool interruptor = true;
     do {
+        cout << getName() << " turn to act." << endl;
         cout << "Select an action: " << endl << "1. Attack" << endl;
         cout << "2. Defend" << endl;
         cin >> action;
