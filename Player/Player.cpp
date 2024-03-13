@@ -92,6 +92,7 @@ Action Player::takeAction(vector<Enemy*> enemies) {
                 doAttack(target);
             };
             currentAction.speed = getSpeed();
+            cout << name << " is attacking " << target->getName() << "!" << endl;
             break;
         case 2:
             currentAction.target = this;
@@ -128,5 +129,6 @@ Action Player::takeAction(vector<Enemy*> enemies) {
                 break;
             }
     }
+    cout << "\n" << endl;
     return currentAction;
 }
