@@ -23,6 +23,7 @@ int main() {
     combat->doCombat();
 
     delete player;
+    delete player2;
     delete enemy;
     delete enemy2;
     delete combat;
